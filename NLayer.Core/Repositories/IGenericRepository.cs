@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NLayer.Core.Repositories
 {
@@ -11,6 +8,9 @@ namespace NLayer.Core.Repositories
     {
         //ASenkron methot
         Task<T> GetByIdAsync(int id);
+
+        IQueryable<T> GetAll(Expression<Func<T, bool>> expression);
+        //
 
         //db^ye yapılacak olan sorguyu oluştuturuyoruz
         IQueryable<T> Where(Expression<Func<T,bool>> expression);//yazmış olduğumuz sorgular direk db'ye gitmez, tolist tolistasync gibi metotları çağırınca o zaman db' ye gider
@@ -26,9 +26,19 @@ namespace NLayer.Core.Repositories
 
         Task AddAsync (T entity); //uzun süren işlem 
 
+        //Birden  fazla kayıt 
+        Task AddRangeAsync(IEnumerable<T> entities);
+        //mümkün olduğunca soyut nesnelerle çalış ,istediğimiz tipe dönüştürebiliriz
 
-        void Update (T entity); //EF core tarafında bunların asenkron metotları yok.Gerek yok. Ef core memorye alıp takip ettiği bir product'ı classın 
+        void Update(T Entity);
 
+        void Remove (T entity); //EF core tarafında bunların asenkron metotları yok.Gerek yok. Ef core memorye alıp takip ettiği bir product'ı classın 
+
+        //sadece state'nı değiştiriyor : uzun süren bir işlem olmadığı iiçin asenkron yapısı yok.stake'ini modify olarak değiştiriyo
+
+        void RemoveRange (IEnumerable<T> entities);
+
+       
 
             
     }
