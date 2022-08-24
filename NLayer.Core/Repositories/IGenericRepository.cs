@@ -29,7 +29,6 @@ namespace NLayer.Core.Repositories
 
         void Update (T entity); //EF core tarafında bunların asenkron metotları yok.Gerek yok. Ef core memorye alıp takip ettiği bir product'ı classın 
 
-        //sadece state'nı değiştiriyor : uzun süren bir işlem olmadığı iiçin asenkron yapısı yok stake  2ini modify olarak değiştiriyo
 
             
     }
