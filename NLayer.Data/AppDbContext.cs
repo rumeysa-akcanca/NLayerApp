@@ -42,7 +42,16 @@ namespace NLayer.Repository
             //Git bu assembly içerisinden bütün configuration dosyalarını oku
             //Configuration dosyaları aynı interface implemente ettiği için reflection yaparak bu interface sahip tüm classları okuyor 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());//getExecutingAssembly çalışmış olduğum assembly
-           // modelBuilder.ApplyConfiguration(new ProductConfiguration());
+                                                                                          // modelBuilder.ApplyConfiguration(new ProductConfiguration());
+
+            modelBuilder.Entity<ProductFeature>().HasData(
+                new ProductFeature() {Id =1,Colar="kırmızı", Height= 100,  ProductId=1 , Width= 200},
+                new ProductFeature() { Id = 2, Colar = "mavi", Height = 100, ProductId = 2, Width = 200 },
+                new ProductFeature() { Id = 3, Colar = "turuncu", Height = 100, ProductId = 3, Width = 200 }
+
+                );
+
+
            base.OnModelCreating(modelBuilder);
         }
     }

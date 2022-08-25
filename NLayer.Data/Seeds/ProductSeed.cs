@@ -21,8 +21,8 @@ namespace NLayer.Repository.Seeds
 
 
 
-                 new Product { Id = 1, Name ="Kitap1",CaategoryId = 2, Price = 200, Stock = 30, CreatedDate = DateTime.Now },
-                 new Product { Id = 1,Name="Defter1", CaategoryId = 3, Price = 140, Stock = 13, CreatedDate = DateTime.Now }
+                 new Product { Id = 4, Name ="Kitap1",CaategoryId = 2, Price = 200, Stock = 30, CreatedDate = DateTime.Now },
+                 new Product { Id = 5,Name="Defter1", CaategoryId = 3, Price = 140, Stock = 13, CreatedDate = DateTime.Now }
              );
         }
     }
