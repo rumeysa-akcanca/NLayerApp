@@ -29,6 +29,17 @@ namespace NLayer.Repository
         {
             //bu optionsla beraber veritabanı yolunu startup dosyası üzerinden vericez
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer("Server= DESKTOP-DR63OLE;Database=NLayerDB;Trusted_Connection=True;");
+        }
+
+
+
+
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products{ get; set; }
         public DbSet<ProductFeature> ProductFeatures { get; set; }
