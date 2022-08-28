@@ -30,7 +30,7 @@ namespace NLayer.Repository.Repositories
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
-            await _dbSet.AddRangeAsync(entities);
+            await _dbSet.AddRangeAsync(entities);//ef core bunları memorye ekledi
         }
 
         public  async Task<bool> AnyAsync(Expression<Func<T, bool>> expression)
@@ -38,11 +38,12 @@ namespace NLayer.Repository.Repositories
             return await _dbSet.AnyAsync(expression);
         }
 
-        public IQueryable<T> GetAll(Expression<Func<T, bool>> expression)
+        public IQueryable<T> GetAll()
         {
             return _dbSet.AsNoTracking().AsQueryable();
         }
 
+       
         public async Task<T> GetByIdAsync(int id)
         {
             return await _dbSet.FindAsync(id);

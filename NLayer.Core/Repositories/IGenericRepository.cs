@@ -9,7 +9,7 @@ namespace NLayer.Core.Repositories
         //ASenkron methot
         Task<T> GetByIdAsync(int id);
 
-        IQueryable<T> GetAll(Expression<Func<T, bool>> expression);
+        IQueryable<T> GetAll();
         //
 
         //db^ye yapılacak olan sorguyu oluştuturuyoruz

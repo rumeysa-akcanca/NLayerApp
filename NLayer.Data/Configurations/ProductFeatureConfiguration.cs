@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NLayer.Core;
+using NLayer.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace NLayer.Repository.Configurations
             //FEature 'in Product'la birebir ilişkisi var
             //ProductFeature'ın bir tane product'ı olabilir,Product'ın da bir tane productfeature'ı olobilir birebir ilişki
             //Kimde foreignkey var productfeature 'da var , productıd benim için foreignkey
-            builder.HasOne(c => c.Product).WithOne(c => c.ProductFeature).HasForeignKey<ProductFeature>(c => c.Product.Id);
+            builder.HasOne(c => c.Product).WithOne(c => c.ProductFeature).HasForeignKey<ProductFeature>(c => c.ProductId);
         }
     }
 }
