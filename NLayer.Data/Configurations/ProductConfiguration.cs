@@ -12,6 +12,11 @@ namespace NLayer.Repository.Configurations
 {
     internal class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
+
+
+
+
+
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.HasKey(c => c.Id);

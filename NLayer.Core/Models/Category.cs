@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NLayer.Core.Models
 {
-    public class Category :BaseEntity
+    public class Category : BaseEntity
     {
         public string Name { get; set; }
         //Aralarındaki ilişkiyi kuralım
@@ -15,5 +15,7 @@ namespace NLayer.Core.Models
         public ICollection<Product> Products { get; set; }
         //Navigation property : birden fazla  farklı classlara farklı entitylere referans verdiğimiz propertyler
         //Category'den productlara gidebilirim
+       
+ 
     }
 }
