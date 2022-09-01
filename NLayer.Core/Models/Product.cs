@@ -25,9 +25,6 @@ namespace NLayer.Core.Models
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        foreach (var item in Summaries)
-	   {
-           Console.WriteLine(item);
-	   }
+      
     }
 }
