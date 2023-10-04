@@ -30,6 +30,7 @@ namespace NLayer.Repository.Configurations
             //Foreignkey : CategoryId
 
             builder.HasOne(c => c.Category).WithMany(c => c.Products).HasForeignKey(c => c.CaategoryId);
+            //bir product ın bir kategorisi olabilir, bir kategorinin birden fazla ürünü olabilir
         }
     }
 }
