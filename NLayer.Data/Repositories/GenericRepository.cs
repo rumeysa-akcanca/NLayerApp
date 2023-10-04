@@ -14,13 +14,13 @@ namespace NLayer.Repository.Repositories
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected readonly AppDbContext _context;//miras alınan sınıflardan erişilir
-        private readonly DbSet<T> _dbSet;//readonly : ya bu esnada değer atıyacaksınız ya da ctor da
+        private readonly DbSet<T> _dbSet;//readonly : ya bu esnada değer atıyacaksınız ya da ctor da //daha sonra set edilemez
 
         public GenericRepository(AppDbContext context)
         {
             _context =context;
             _dbSet = _context.Set<T>();
-            
+            // readonly olduğu için burası dışında bir yerde set edilemez.
         }
 
         public async Task AddAsync(T entity)
