@@ -16,7 +16,7 @@ namespace NLayer.Repository.Configurations
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasKey(c => c.Id);//id'si key olacak
-            builder.Property(c => c.Id).UseIdentityColumn();//Identity birer birer artsın
+            builder.Property(c => c.Id).UseIdentityColumn();//Identity , default olarak birer birer artsın
             builder.Property(c => c.Name).IsRequired().HasMaxLength(50);//zorunlu,db'de nullable olmasın,max uzunluk 50 
 
             builder.ToTable("Categories"); //tablonun ismi default olarak dbset<isim> . Tabloya isim veriyoruz
