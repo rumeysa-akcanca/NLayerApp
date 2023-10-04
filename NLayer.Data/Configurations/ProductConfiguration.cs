@@ -13,10 +13,6 @@ namespace NLayer.Repository.Configurations
     internal class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
 
-
-
-
-
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.HasKey(c => c.Id);
@@ -26,7 +22,7 @@ namespace NLayer.Repository.Configurations
             //################.## //toplam 18 karakter , virgülden sonra iki karakter
             builder.Property(c => c.Price).IsRequired().HasColumnType("decimal(18,2)");
             builder.ToTable("Products");
-
+            //her nokta dedikten sonra  metotlar çıkıyor (fluent api)
             //EF core aradaki ilişkiyi anlıyor, açık açık vermek gerekirse
             //builder aslında product
             //bir products'in bir categorysi olabilir: hasone
